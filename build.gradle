@@ -1,0 +1,44 @@
+buildscript {
+    ext.kotlinVersion = '1.9.23'
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.5.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "de.mannodermaus.gradle.plugins:android-junit5:1.11.0.0"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+
+        // This may still be needed for some dependencies
+        maven { url "https://plugins.gradle.org/m2/" }
+
+        // If Spek dependencies are still hosted here, consider moving them to MavenCentral or JitPack
+        maven { url "https://maven.pkg.jetbrains.space/public/p/spek/dev" }
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    // App dependencies
+    spekVersion = '2.0.19'
+    junitVersion = '4.12'
+    buildToolsVersion = '28.0.3'
+    minSdkVersion = 21
+    targetSdkVersion = 34
+    compileSdkVersion = 34
+}
