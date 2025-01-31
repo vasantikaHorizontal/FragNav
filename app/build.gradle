@@ -44,9 +44,9 @@ repositories {
 
 dependencies {
     implementation project(':frag-nav')
-    //implementation 'com.github.vasantikaHorizontal:frag-nav:2.0.0'
+    //implementation 'com.github.vasantikaHorizontal:FragNav:2.0.2'
     implementation "com.google.android.material:material:1.12.0" // Update to latest version
     implementation "androidx.appcompat:appcompat:1.7.0" // Update to latest version
     testImplementation "junit:junit:4.13.2" // Updated version for JUnit
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.20" // Update to latest Kotlin version
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.7.10" // Update to latest Kotlin version
 }

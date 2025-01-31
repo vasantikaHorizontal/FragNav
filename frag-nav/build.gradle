@@ -31,7 +31,7 @@ ext {
 
     publishedGroupId = 'com.ncapdevi'
     libraryName = 'FragNav'
-    artifact = 'frag-nav'
+    artifact = 'FragNav'
 
     libraryDescription = 'A library to help manage multiple fragment stacks'
 
@@ -88,8 +88,8 @@ publishing {
     publications {
         release(MavenPublication) {
             groupId = 'com.github.vasantikaHorizontal'
-            artifactId = 'frag-nav'
-            version = '2.0.2'
+            artifactId = 'FragNav'
+            version = '2.0.4'
 
             afterEvaluate {
                 from components.release
