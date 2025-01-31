@@ -88,8 +88,8 @@ publishing {
     publications {
         release(MavenPublication) {
             groupId = 'com.github.vasantikaHorizontal'
-            artifactId = 'FragNav'
-            version = '2.0.0'
+            artifactId = 'frag-nav'
+            version = '2.0.1'
 
             afterEvaluate {
                 from components.release
