@@ -52,7 +52,7 @@ group = ext.publishedGroupId
 version = ext.libraryVersionName
 
 // Configure the publishing task
-publishing {
+/*publishing {
     publications {
         mavenJava(MavenPublication) {
             pom {
@@ -82,16 +82,20 @@ publishing {
         }
     }
 
-//    repositories {
-//        maven {
-//            name = 'MyMavenRepo'
-//            url = uri('https://mvnrepository.com/artifact/com.ncapdevi/frag-nav')
-//            credentials {
-//                username = 'your-username'
-//                password = 'your-password'
-//            }
-//        }
-//    }
+}*/
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.vasantikaHorizontal'
+            artifactId = 'FragNav'
+            version = '1.0.1'
+
+            afterEvaluate {
+                from components.release
+            }
+        }
+    }
 }
 
 tasks.withType(JavaCompile).configureEach {
@@ -111,6 +115,12 @@ android {
         jvmTarget = "17"
     }
 
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
     lintOptions {
         abortOnError false
     }
