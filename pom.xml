@@ -1,0 +1,91 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.azure.ENBD-Apps</groupId>
+    <artifactId>FragNav</artifactId>
+    <version>1.0.0</version>
+    <packaging>aar</packaging>
+
+    <name>FragNav</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>FragNav</id>
+            <url>https://pkgs.dev.azure.com/ENBD-More/ENBD-Apps/_packaging/FragNav/maven/v1</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>jayway</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>FragNav</id>
+            <url>https://pkgs.dev.azure.com/ENBD-More/ENBD-Apps/_packaging/FragNav/maven/v1</url>
+        </repository>
+        <snapshotRepository>
+            <id>FragNav</id>
+            <url>https://pkgs.dev.azure.com/ENBD-More/ENBD-Apps/_packaging/FragNav/maven/v1</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <artifactId>maven-android-sdk-deployer</artifactId>
+                <version>1.0.0-beta-4</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <sdk>
+                        <platform>21</platform>
+                    </sdk>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jayway</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+</project>
